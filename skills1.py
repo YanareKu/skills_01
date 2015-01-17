@@ -41,35 +41,75 @@ long_words(word_list)
 # Write a function that finds the smallest element in a list of integers and returns it.
 def smallest(number_list):
     new_list = sorted(number_list)
-    print new_list[0]
+    print "This is the smallest number in our list", new_list[0]
     return new_list[0]
 
 smallest(number_list)
 
 # Write a function that finds the largest element in a list of integers and returns it.
 def largest(number_list):
-    return None
+    new_list = sorted(number_list)
+    print "This is the largest number in our list", new_list[-1]
+    return new_list[-1]
+
+largest(number_list)
 
 # Write a function that takes a list of numbers and returns a new list of all those numbers divided by two.
 def halvesies(number_list):
-    return []
+    new_list = []
+    for num in number_list:
+        new_num = (num / 2.0)
+        new_list.append(new_num)
+    print "List of halvesies:", new_list
+    return new_list
+
+halvesies(number_list)
 
 # Write a function that takes a list of words and returns a list of all the lengths of those words.
 def word_lengths(word_list):
-    return []
+    new_list = [len(word) for word in word_list]
+    print "List of word lengths:", new_list
+    return [new_list]
+
+word_lengths(word_list)
 
 # Write a function (using iteration) that sums all the numbers in a list.
 def sum_numbers(number_list):
-    return 0
+    total = 0
+    for num in number_list:
+        total += num
+    print "The total of list is:", total
+    return total
+
+sum_numbers(number_list)
 
 # Write a function that multiplies all the numbers in a list together.
 def mult_numbers(number_list):
-    return 0
+    total = 1
+    for num in number_list:
+        total = total * num
+    print "All the numbers in this list multiplied equal:", total
+    return total
+
+mult_numbers(number_list)
 
 # Write a function that joins all the strings in a list together (without using the join method) and returns a single string.
 def join_strings(word_list):
-    return ""
+    a = ""
+    for word in word_list:
+        a = a + word
+    print a
+    return a
+
+join_strings(word_list)
 
 # Write a function that takes a list of integers and returns the average (without using the avg method)
 def average(number_list):
-    return 0
+    """add numbers together
+    divide sum by number of numbers
+    return result"""
+    average = sum_numbers(number_list) / len(number_list)
+    print "The average of all integers in this list is:", average
+    return average
+
+average(number_list)
